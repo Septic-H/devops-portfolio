@@ -1,0 +1,22 @@
+# Dependency directories
+node_modules/
+
+# Environment variables (Security Risk)
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage directory used by testing tools
+coverage/
+
+# Mac OS junk files
+.DS_Store
