@@ -3,7 +3,7 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 app.get('/health', (req, res) => {
-  res.status(200).json({ status: 'OK', uptime: process.uptime() });
+  res.status(200).json({ status: 'Deployed via Travis CI!', uptime: process.uptime() });
 });
 
 if (require.main === module) {
