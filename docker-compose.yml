@@ -1,7 +1,7 @@
 version: '3.8'
 
 services:
-  # 1. Node.js App
+  # Node.js App
   api:
     container_name: api-container
     build: .
@@ -12,7 +12,7 @@ services:
     environment:
       - NODE_ENV=production
 
-  # 2. Node Exporter
+  # Node Exporter
   node_exporter:
     image: prom/node-exporter:latest
     container_name: node_exporter
@@ -20,7 +20,7 @@ services:
     ports:
       - "127.0.0.1:9100:9100"
 
-  # 3. Prometheus
+  # Prometheus
   prometheus:
     image: prom/prometheus:latest
     container_name: prometheus
@@ -31,7 +31,7 @@ services:
       - ./prometheus.yml:/etc/prometheus/prometheus.yml
       - prometheus_data:/prometheus
 
-  # 4. Grafana
+  # Grafana
   grafana:
     image: grafana/grafana:latest
     container_name: grafana
