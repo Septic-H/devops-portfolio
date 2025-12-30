@@ -3,6 +3,7 @@ node_modules
 .travis.yml
 travis_key
 travis_key.pub
-deploy_key
+id_rsa
+id_rsa.pub
 Dockerfile
 README.md

@@ -20,3 +20,8 @@ coverage/
 
 # Mac OS junk files
 .DS_Store
+
+travis_key
+travis_key.pub
+id_rsa
+id_rsa.pub
