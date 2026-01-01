@@ -30,7 +30,7 @@ app.use((req, res) => {
 });
 
 if (require.main === module) {
-  app.listen(port, '127.0.0.1', () => {
+  app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
   });
 }
