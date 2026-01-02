@@ -298,6 +298,12 @@ p {
     );
     pointer-events: none;
     z-index: 2;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.profile-card-wrapper:hover .profile-card-shine {
+    opacity: 1;
 }
 
 .profile-card-content {
