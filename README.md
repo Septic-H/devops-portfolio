@@ -6,7 +6,7 @@
 
 A production-grade, containerized Node.js application. Deployed securely on a hardened Linux server with a fully automated CI/CD pipeline and real-time observability stack.
 
-**Live URL:** [Insert Your Domain Here]
+**Live URL:** https://huzaifaj.tech/
 
 ## Live Monitoring Dashboard
 *(Air-gapped Grafana dashboard accessing real-time server metrics via SSH Tunnel)*
