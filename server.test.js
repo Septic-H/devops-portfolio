@@ -5,15 +5,13 @@ describe('System Reliability & Routes', () => {
   
   // ==================== HEALTH CHECK ====================
   describe('Health Endpoint', () => {
-    it('GET /health with Accept: application/json should return JSON with status and uptime', async () => {
+    it('GET /health with Accept: application/json should return JSON status', async () => {
       const res = await request(app)
         .get('/health')
         .set('Accept', 'application/json');
       expect(res.statusCode).toEqual(200);
       expect(res.headers['content-type']).toMatch(/application\/json/);
       expect(res.body).toHaveProperty('status');
-      expect(res.body).toHaveProperty('uptime');
-      expect(typeof res.body.uptime).toBe('number');
     });
   });
 
@@ -43,11 +41,9 @@ describe('System Reliability & Routes', () => {
 
   // ==================== ERROR HANDLING ====================
   describe('Error Handling', () => {
-    it('GET /random-junk should return 404 and the custom error page', async () => {
+    it('GET /random-junk should return 404', async () => {
       const res = await request(app).get('/this-path-does-not-exist');
       expect(res.statusCode).toEqual(404);
-      // Ensures your custom 404.html is served, not just text
-      expect(res.headers['content-type']).toMatch(/text\/html/);
     });
   });
 

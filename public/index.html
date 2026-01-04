@@ -1,124 +1,389 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Huzaifa | Software Engineer</title>
-    
+    <title>Huzaifa | DevOps & Backend Engineer</title>
+
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="apple-touch-icon" href="/favicon.svg">
     <link rel="manifest" href="/site.webmanifest">
     <meta name="theme-color" content="#121317">
-    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
 </head>
+
 <body>
+    <!-- Spotlight Effect -->
+    <div class="spotlight"></div>
 
-    <nav>
-        <a href="/" class="logo">Huzaifa<span class="logo-dot">.</span></a>
-        <a href="/health" class="status-pill">
-            <span class="dot"></span>
-            System Operational
-        </a>
-    </nav>
+    <!-- Skip to content -->
+    <a href="#content" class="skip-to-content">Skip to Content</a>
 
-    <section class="hero-section">
-        <div class="glow"></div>
-        <main class="hero-content">
-            <h1>
-                <span class="gradient-text">I turn</span>
-                <br> "it works on my machine" <br>
-                <span class="gradient-text">into</span>
-                <br> "it works in production." <br>
-            </h1> 
-        </main>
-
-        <aside class="hero-card">
-            <div class="profile-card-wrapper">
-                <div class="profile-card-glow"></div>
-                <div class="profile-card">
-                    <div class="profile-card-shine"></div>
-                    <div class="profile-card-content">
-                        <div class="profile-info">
-                            <h3 class="profile-name">Huzaifa</h3>
-                            <p class="profile-title">Devops and Backend Engineer</p>
-                            <p class="profile-status">
-                                Available for opportunities
-                            </p>
-                        </div>
-                        <div class="social-links">
-                            <a href="mailto:huzaifa1705@gmail.com" class="social-link" aria-label="Email">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <rect x="2" y="4" width="20" height="16" rx="2"/>
-                                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
-                                </svg>
-                                <span>Email</span>
-                            </a>
-                            <a href="https://linkedin.com/in/m-huzaifa-j" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                </svg>
-                                <span>LinkedIn</span>
-                            </a>
-                            <a href="https://github.com/septic-h" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                                </svg>
-                                <span>GitHub</span>
-                            </a>
-                            <a href="https://x.com/Huzaifa__J" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="X">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                                </svg>
-                                <span>X</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </aside>
-    </section>
-
-    <section class="projects">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-            <article class="project-card">
-                <div class="card-body">
-                    <h3 class="project-title">
-                        DevOps Portfolio API
-                        <span class="project-badge">(You are here)</span>
-                    </h3>
-                    <p class="project-description">
-                        A production-grade Node.js infrastructure. Features a hardened Linux environment, automated GitOps pipeline, and air-gapped monitoring.
+    <div class="container">
+        <!-- Left Sidebar: Sticky Header -->
+        <header class="sidebar">
+            <div class="sidebar-content">
+                <div class="header-info">
+                    <h1 class="header-name">
+                        <a href="/">Huzaifa</a>
+                    </h1>
+                    <h2 class="header-title">DevOps & Backend Engineer</h2>
+                    <p class="header-description">
+                        I turn "it works on my machine" into "it works in production."
                     </p>
-                    <div class="tech-tags">
-                        <span class="tag">Docker</span>
-                        <span class="tag">Nginx</span>
-                        <span class="tag">Travis CI</span>
-                        <span class="tag">Grafana</span>
-                    </div>
-                </div>
-                <div class="card-footer">
-                    <a href="https://github.com/septic-h/devops-portfolio-api" class="card-btn" target="_blank" rel="noopener noreferrer">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-                        </svg>
-                        GitHub Repo
-                    </a>
-                </div>
-            </article>
-        </div>
-    </section>
 
-    <footer>
-        Deployed via Travis CI & Docker on DigitalOcean
-    </footer>
+                    <!-- Navigation -->
+                    <nav class="nav-menu" aria-label="In-page navigation">
+                        <ul>
+                            <li>
+                                <a href="#about" class="nav-link active">
+                                    <span class="nav-indicator"></span>
+                                    <span class="nav-text">About</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#experience" class="nav-link">
+                                    <span class="nav-indicator"></span>
+                                    <span class="nav-text">Experience</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#projects" class="nav-link">
+                                    <span class="nav-indicator"></span>
+                                    <span class="nav-text">Projects</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <!-- Social Links -->
+                <ul class="social-links" aria-label="Social media">
+                    <li>
+                        <a href="https://github.com/septic-h" target="_blank" rel="noopener noreferrer"
+                            aria-label="GitHub" title="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="social-icon">
+                                <path
+                                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://linkedin.com/in/m-huzaifa-j" target="_blank" rel="noopener noreferrer"
+                            aria-label="LinkedIn" title="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="social-icon">
+                                <path
+                                    d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://x.com/Huzaifa__J" target="_blank" rel="noopener noreferrer"
+                            aria-label="X (Twitter)" title="X">
+                            <svg viewBox="0 0 24 24" fill="currentColor" class="social-icon">
+                                <path
+                                    d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:huzaifa1705@gmail.com" aria-label="Email" title="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                class="social-icon">
+                                <rect x="2" y="4" width="20" height="16" rx="2" />
+                                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </header>
+
+        <!-- Right Content Area -->
+        <main id="content" class="main-content">
+            <!-- About Section -->
+            <section id="about" class="section" aria-label="About me">
+                <div class="section-header-mobile">
+                    <h2 class="section-title-mobile">About</h2>
+                </div>
+                <div class="section-content">
+                    <p class="mb-4">
+                        I am a <strong>Backend and DevOps Engineer</strong> dedicated to designing scalable, high-performance
+                        architectures. My core stack leverages <strong>NestJS</strong>, <strong>GraphQL</strong>, and
+                        <strong>MongoDB</strong> to build flexible data layers and robust <strong>real-time APIs</strong>. I treat
+                        infrastructure as a first-class citizen, using <strong>Docker</strong> to containerize applications and
+                        ensure reliability from development to production.
+                    </p>
+                    <p>
+                        Beyond the code, I am passionate about the full spectrum of computing. I spend my time optimizing automated
+                        <strong>CI/CD workflows</strong>, experimenting with <strong>Machine Learning</strong> models, and
+                        fine-tuning my custom <strong>Linux</strong> environment. I believe in practical, hands-on problem solving,
+                        whether that means training an <strong>AI tool</strong> or configuring a server kernel, because the best way
+                        to master a system is to build it yourself.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Experience Section -->
+            <section id="experience" class="section" aria-label="Work experience">
+                <div class="section-header-mobile">
+                    <h2 class="section-title-mobile">Experience</h2>
+                </div>
+                <div class="section-content">
+                    <ol class="experience-list">
+                        <li class="experience-item">
+                            <div class="experience-card">
+                                <header class="experience-header">
+                                    Jan — Mar 2025
+                                </header>
+                                <div class="experience-content">
+                                    <h3 class="experience-title">
+                                        <a href="#" class="experience-link">
+                                            <span class="link-overlay"></span>
+                                            <span>
+                                                Junior Back-End Developer ·
+                                                <span class="company-name">
+                                                    Texinity Technologies (SMC-PVT) LTD.
+                                                    <svg viewBox="0 0 20 20" fill="currentColor" class="link-arrow">
+                                                        <path fill-rule="evenodd"
+                                                            d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                                            clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </h3>
+                                    <p class="experience-description">
+                                        Worked on the back-end of Socials Board, an AI-powered social media management
+                                        tool for scheduling, posting, and analytics. Developed and optimized APIs using
+                                        NestJS, GraphQL, and MongoDB. Created test cases for black-box testing as part
+                                        of SQA and implemented SEO best practices. Also built a Personal Finance Tracker
+                                        with user authentication, transaction tracking, balance validation, and GraphQL
+                                        resolvers for real-time income/expense updates using Mongoose ODM.
+                                    </p>
+                                    <ul class="tech-stack">
+                                        <li><span class="tech-tag">NestJS</span></li>
+                                        <li><span class="tech-tag">GraphQL</span></li>
+                                        <li><span class="tech-tag">MongoDB</span></li>
+                                        <li><span class="tech-tag">Mongoose ODM</span></li>
+                                        <li><span class="tech-tag">Microservices</span></li>
+                                        <li><span class="tech-tag">TypeScript</span></li>
+                                        <li><span class="tech-tag">Software Quality Assurance</span></li>
+                                        <li><span class="tech-tag">Selenium</span></li>
+                                        <li><span class="tech-tag">SEO</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="experience-item">
+                            <div class="experience-card">
+                                <header class="experience-header">
+                                    Feb — Dec 2024
+                                </header>
+                                <div class="experience-content">
+                                    <h3 class="experience-title">
+                                        <a href="#" class="experience-link">
+                                            <span class="link-overlay"></span>
+                                            <span>
+                                                Freelance Software Engineer ·
+                                                <span class="company-name">
+                                                    Freelance
+                                                    <svg viewBox="0 0 20 20" fill="currentColor" class="link-arrow">
+                                                        <path fill-rule="evenodd"
+                                                            d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                                            clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </span>
+                                            </span>
+                                        </a>
+                                    </h3>
+                                    <p class="experience-description">
+                                        Developed multiple Java-based projects using JavaFX. Analyzed datasets using
+                                        data processing techniques in Python, including variance calculation, cosine
+                                        similarity, and data consistency validation. Implemented a client-server network
+                                        infrastructure using VMs, including Active Directory, DHCP, file sharing, and
+                                        user/group management.
+                                    </p>
+                                    <ul class="tech-stack">
+                                        <li><span class="tech-tag">JavaFX</span></li>
+                                        <li><span class="tech-tag">Python</span></li>
+                                        <li><span class="tech-tag">Data Analysis</span></li>
+                                        <li><span class="tech-tag">Data Processing</span></li>
+                                        <li><span class="tech-tag">Client-Server Architecture</span></li>
+                                        <li><span class="tech-tag">Network Infrastructure</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </section>
+
+            <!-- Projects Section -->
+            <section id="projects" class="section" aria-label="Selected projects">
+                <div class="section-header-mobile">
+                    <h2 class="section-title-mobile">Projects</h2>
+                </div>
+                <div class="section-content">
+                    <ul class="projects-list">
+                        <li class="project-item">
+                            <div class="project-card">
+                                <div class="project-content">
+                                    <h3 class="project-title">
+                                        <a href="https://github.com/septic-h/devops-portfolio-api" target="_blank"
+                                            rel="noopener noreferrer" class="project-link">
+                                            <span class="link-overlay"></span>
+                                            <span>
+                                                DevOps Portfolio API
+                                                <svg viewBox="0 0 20 20" fill="currentColor" class="link-arrow">
+                                                    <path fill-rule="evenodd"
+                                                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        A production-grade Node.js infrastructure showcasing DevOps best practices.
+                                        Features a hardened Linux environment, automated GitOps pipeline with Travis CI,
+                                        comprehensive monitoring with Grafana and Prometheus, and containerized
+                                        deployment with Docker. Includes health checks, logging, and automated testing.
+                                    </p>
+                                    <ul class="tech-stack">
+                                        <li><span class="tech-tag">Docker</span></li>
+                                        <li><span class="tech-tag">Nginx</span></li>
+                                        <li><span class="tech-tag">Travis CI</span></li>
+                                        <li><span class="tech-tag">Grafana</span></li>
+                                        <li><span class="tech-tag">Node.js</span></li>
+                                        <li><span class="tech-tag">Prometheus</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="project-item">
+                            <div class="project-card">
+                                <div class="project-content">
+                                    <h3 class="project-title">
+                                        <a href="https://github.com/Septic-H/Personal-Finance-Tracker"
+                                            class="project-link">
+                                            <span class="link-overlay"></span>
+                                            <span>
+                                                Personal Finance Tracker
+                                                <svg viewBox="0 0 20 20" fill="currentColor" class="link-arrow">
+                                                    <path fill-rule="evenodd"
+                                                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        Implemented user authentication, transaction tracking, and balance validation.
+                                        Designed GraphQL resolvers for real-time income/expense updates and used
+                                        Mongoose ODM for schema modeling and validation.
+                                    </p>
+                                    <ul class="tech-stack">
+                                        <li><span class="tech-tag">NestJS</span></li>
+                                        <li><span class="tech-tag">GraphQL</span></li>
+                                        <li><span class="tech-tag">MongoDB</span></li>
+                                        <li><span class="tech-tag">Mongoose ODM</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="project-item">
+                            <div class="project-card">
+                                <div class="project-content">
+                                    <h3 class="project-title">
+                                        <a href="https://github.com/Septic-H/Linear-Regression-For-Predicting-House-Prices"
+                                            class="project-link">
+                                            <span class="link-overlay"></span>
+                                            <span>
+                                                Linear Regression for Predicting House Prices
+                                                <svg viewBox="0 0 20 20" fill="currentColor" class="link-arrow">
+                                                    <path fill-rule="evenodd"
+                                                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        Trained a ML model on the UCI Real Estate Valuation Dataset to predict house
+                                        prices using matrix operations on features like house age, MRT distance, and
+                                        store count. Built a JavaFX GUI and used Python for data visualization.
+                                    </p>
+                                    <ul class="tech-stack">
+                                        <li><span class="tech-tag">Machine Learning</span></li>
+                                        <li><span class="tech-tag">Python</span></li>
+                                        <li><span class="tech-tag">JavaFX</span></li>
+                                        <li><span class="tech-tag">Linear Regression</span></li>
+                                        <li><span class="tech-tag">Data Visualization</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="project-item">
+                            <div class="project-card">
+                                <div class="project-content">
+                                    <h3 class="project-title">
+                                        <a href="https://github.com/Septic-H/Optical-Character-Recognition"
+                                            class="project-link">
+                                            <span class="link-overlay"></span>
+                                            <span>
+                                                Optical Character Recognition (OCR) System
+                                                <svg viewBox="0 0 20 20" fill="currentColor" class="link-arrow">
+                                                    <path fill-rule="evenodd"
+                                                        d="M5.22 14.78a.75.75 0 001.06 0l7.22-7.22v5.69a.75.75 0 001.5 0v-7.5a.75.75 0 00-.75-.75h-7.5a.75.75 0 000 1.5h5.69l-7.22 7.22a.75.75 0 000 1.06z"
+                                                        clip-rule="evenodd"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </h3>
+                                    <p class="project-description">
+                                        Built a full-stack OCR system for handwritten digit recognition using an
+                                        Artificial Neural Network (ANN), following the "500 Lines or Less" approach.
+                                        Developed a JavaScript/HTML5 client for digit input and a Python server for
+                                        training and prediction, utilizing supervised learning and backpropagation with
+                                        optimized ANN architecture and model persistence for efficient, accurate
+                                        predictions.
+                                    </p>
+                                    <ul class="tech-stack">
+                                        <li><span class="tech-tag">Python</span></li>
+                                        <li><span class="tech-tag">JavaScript</span></li>
+                                        <li><span class="tech-tag">HTML5</span></li>
+                                        <li><span class="tech-tag">Neural Networks</span></li>
+                                        <li><span class="tech-tag">Machine Learning</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <p>
+                    UI hugely inspired by brittanychiang.com</a>.
+                    Deployed via Travis CI & Docker on DigitalOcean.
+                </p>
+            </footer>
+        </main>
+    </div>
 
     <script src="js/main.js"></script>
-
 </body>
+
 </html>
