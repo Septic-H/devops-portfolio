@@ -2,6 +2,7 @@ language: node_js
 node_js:
   - "stable"
 install:
+  - ls -R
   - cd services/backend && npm install
 script:
   - cd services/backend && npm test
