@@ -19,11 +19,15 @@ This project implements the **Reverse Proxy Pattern** to route traffic between i
 
 ```mermaid
 graph LR
-    User(User) --> NginxHost[Host Nginx Gateway]
-    NginxHost -- / --> Frontend[Frontend Service :8080]
-    NginxHost -- /api/ --> Backend[Backend Service :3000]
-    Prometheus --> Backend
-    Prometheus --> NodeExporter
+    User((User)) --> NginxHost[Host Nginx Gateway]
+    
+    subgraph "Docker Network"
+        NginxHost -->|/| Frontend[Frontend Service :8080]
+        NginxHost -->|/api/| Backend[Backend Service :3000]
+        
+        Prometheus[Prometheus] -->|Scrape| Backend
+        Prometheus -->|Scrape| NodeExporter[Node Exporter]
+    end
 ```
 * Service A (Frontend): Lightweight Nginx container serving static assets (HTML/CSS/JS).
 
