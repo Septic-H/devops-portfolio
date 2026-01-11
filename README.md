@@ -51,7 +51,7 @@ graph LR
 
 ## The Pipeline
 1.  **Push:** Commit code to `main`.
-2.  **Build:** Travis CI builds independent images for s`ervices/frontend` and `services/backend`.
+2.  **Build:** Travis CI builds independent images for `services/frontend` and `services/backend`.
 3.  **Test:** Unit tests run specifically against the Backend API logic.
 4.  **Deploy:** Pipeline SSHs into the server, fetches changes, and rebuilds containers using `--remove-orphans` to clean up old microservices.
 
