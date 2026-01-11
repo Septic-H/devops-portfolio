@@ -7,3 +7,5 @@ id_rsa
 id_rsa.pub
 Dockerfile
 README.md
+server.test.js
+npm-debug.log
