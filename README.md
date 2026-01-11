@@ -1,4 +1,4 @@
-[![Build Status](https://app.travis-ci.com/Septic-H/devops-portfolio-api.svg?token=NuVMfJXHnnWDLnoMrTAx&branch=main)](https://app.travis-ci.com/Septic-H/devops-portfolio-api)
+[![Build Status](https://app.travis-ci.com/Septic-H/devops-portfolio.svg?token=NuVMfJXHnnWDLnoMrTAx&branch=main)](https://app.travis-ci.com/Septic-H/devops-portfolio-api)
 ![Docker](https://img.shields.io/badge/Docker_Compose-v2-blue)
 ![Monitoring](https://img.shields.io/badge/Prometheus_%26_Grafana-Active-orange)
 
@@ -60,7 +60,7 @@ graph LR
 ### Run Locally (Full Stack)
 ```bash
 # Clone and run everything (App + Prometheus + Grafana)
-git clone https://github.com/Septic-H/devops-portfolio-api.git
+git clone https://github.com/Septic-H/devops-portfolio.git
 docker compose up -d --build
 
 # API: http://localhost:3000
