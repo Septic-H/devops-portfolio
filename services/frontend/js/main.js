@@ -191,6 +191,3 @@ document.addEventListener('keydown', (e) => {
 document.addEventListener('mousedown', () => {
     document.body.classList.remove('keyboard-nav');
 });
-
-console.log('%c[SYSTEM] Portfolio initialized successfully!', 'color: #00ff41; font-weight: bold;');
-console.log('%c[STATUS] All modules loaded', 'color: #00ffff;');
