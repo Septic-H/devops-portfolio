@@ -1,0 +1,9 @@
+# /etc/cron.d/devops-tasks: crontab entries for the portfolio server
+
+# 1. SSL Auto-Renewal
+# Checks twice daily, sleeps for a random duration, then renews.
+0 0,12 * * * root /opt/certbot/bin/python -c 'import random; import time; time.sleep(random.random() * 3600)' && sudo certbot renew -q
+
+# 2. Docker Cleanup (Weekly)
+# Clears unused containers and images every Sunday at 4:00 AM.
+0 4 * * 0 root docker system prune -af --volumes
