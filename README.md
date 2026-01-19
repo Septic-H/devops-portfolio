@@ -2,7 +2,7 @@
 ![Docker](https://img.shields.io/badge/Docker_Compose-v2-blue)
 ![Monitoring](https://img.shields.io/badge/Prometheus_%26_Grafana-Active-orange)
 
-# DevOps Portfolio: Microservices Architecture
+# DevOps Portfolio: Microservices & IaC
 
 A production-grade, distributed web application built with a **Microservices Architecture**. The application is decoupled into independent frontend and backend services, orchestrated via Docker, and deployed securely on a hardened Linux server.
 
@@ -41,12 +41,17 @@ graph LR
 * **Proxy:** Nginx (SSL/TLS via Let's Encrypt)
 * **CI/CD:** Travis CI (GitOps workflow)
 * **Observability:** Prometheus (Metrics) & Grafana (Visualization)
-* **Infrastructure:** DigitalOcean (Hardened Ubuntu VPS)
+* **Security:** Fail2Ban (IPS), UFW Firewall, SSH Hardening
+* **Automation:** Cron, Logrotate, Certbot (SSL)
+* **Infrastructure:** DigitalOcean Droplet (Ubuntu 24.04 LTS)
 
-## Security & Architecture
-* **Hardened Access:** Root login disabled. Password auth disabled (SSH Keys only).
+## Infrastructure as Code (IaC) & Automation
+Host configuration is version-controlled in the infrastructure/ directory and applied via symlinks to ensure a consistent environment.
+* **Automated Security (Fail2Ban):** Configured via `fail2ban-jail.local` to ban IPs after 3 failed SSH attempts and block bots scanning for vulnerabilities.
+* **Maintenance Lifecycle:** Automated SSL certificate renewals and weekly Docker garbage collection managed via `crontab.cron`.
+* **Resource Management:** Custom log rotation policies enforce strict 10MB limits on Nginx and Fail2Ban logs to prevent disk saturation.
+* **Disaster Recovery:** Host networking and security configurations are decoupled from the OS, enabling rapid restoration from the repository.
 * **Air-Gapped Monitoring:** Grafana dashboard is hidden from the public internet (localhost only) and accessed via SSH Tunneling.
-* **Stability:** 1GB Swap configured to prevent OOM (Out of Memory) crashes.
 * **Zero-Downtime:** Rolling updates via Docker Compose.
 
 ## The Pipeline
@@ -69,9 +74,14 @@ docker compose up -d --build
 
 ### Directory Structure
 ```bash
+├── infrastructure/    # Server Configs (IaC)
+│   ├── nginx-gateway.conf
+│   ├── fail2ban-jail.local
+│   ├── crontab.cron
+│   └── logrotate/
 ├── services/
-│   ├── frontend/   # Nginx Container (Static Site)
-│   └── backend/    # Node.js Container (API)
+│   ├── frontend/      # Nginx Container (Static Site)
+│   └── backend/       # Node.js Container (API)
 ├── docker-compose.yml
 └── .travis.yml
 ```
