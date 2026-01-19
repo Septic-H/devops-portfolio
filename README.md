@@ -47,10 +47,9 @@ graph LR
 
 ## Infrastructure as Code (IaC) & Automation
 Host configuration is version-controlled in the infrastructure/ directory and applied via symlinks to ensure a consistent environment.
-* **Automated Security (Fail2Ban):** Configured via `fail2ban-jail.local` to ban IPs after 3 failed SSH attempts and block bots scanning for vulnerabilities.
+* **Automated Security:** Configured via `fail2ban-jail.local` to ban IPs after 3 failed SSH attempts and block bots scanning for vulnerabilities.
 * **Maintenance Lifecycle:** Automated SSL certificate renewals and weekly Docker garbage collection managed via `crontab.cron`.
-* **Resource Management:** Custom log rotation policies enforce strict 10MB limits on Nginx and Fail2Ban logs to prevent disk saturation.
-* **Disaster Recovery:** Host networking and security configurations are decoupled from the OS, enabling rapid restoration from the repository.
+* **Resource Management:** Custom log rotation policies enforce strict 10MB limits on Nginx and Fail2Ban logs.
 * **Air-Gapped Monitoring:** Grafana dashboard is hidden from the public internet (localhost only) and accessed via SSH Tunneling.
 * **Zero-Downtime:** Rolling updates via Docker Compose.
 
