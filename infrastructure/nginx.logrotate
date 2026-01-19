@@ -1,0 +1,29 @@
+/var/log/nginx/*.log {
+    # Check log size daily
+    daily
+    
+    # Force rotation if it hits 10MB
+    maxsize 10M
+    
+    # Keep 14 old logs
+    rotate 14
+    
+    # Compress old logs
+    compress
+    delaycompress
+    
+    # Don't error out if logs are missing
+    missingok
+    notifempty
+    
+    # Permissions
+    create 0640 www-data adm
+    sharedscripts
+    
+    # Tell Nginx to stop writing to the old file
+    postrotate
+        if [ -f /var/run/nginx.pid ]; then
+            kill -USR1 `cat /var/run/nginx.pid`
+        fi
+    endscript
+}
