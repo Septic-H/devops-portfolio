@@ -76,13 +76,6 @@ function initializeTerminalControls() {
     // Close
     closeBtn.addEventListener('click', () => {
         terminal.classList.add('closed');
-
-        // Optional: Add a way to bring it back, or just let it stay closed 
-        // until refresh. For now, let's create a "Reset" toast or button could be complex.
-        // A simple double-click on section title to restore could be a hidden easter egg feature
-        // or just rely on refresh.
-
-        // Let's add a small restore button in the section if it is closed
         createRestoreButton(terminal);
     });
 }

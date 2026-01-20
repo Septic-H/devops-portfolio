@@ -145,62 +145,71 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        justify-content: space-between;
         transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .sidebar .sidebar-content {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        /* Ensure content takes full height to allow bottom spacing */
+    }
+
+    .sidebar.collapsed .sidebar-content {
+        align-items: center;
+        /* Center all items horizontally in collapsed mode */
     }
 
     .sidebar.collapsed {
         width: 80px;
+        border-right: 1px solid var(--terminal-border);
+        padding-right: 1rem;
     }
 
     .sidebar.collapsed .header-name,
     .sidebar.collapsed .header-title,
     .sidebar.collapsed .header-description,
-    .sidebar.collapsed .social-links,
     .sidebar.collapsed .nav-text,
     .sidebar.collapsed .nav-indicator {
         opacity: 0;
         pointer-events: none;
         visibility: hidden;
         transition: opacity 0.2s ease, visibility 0s linear 0.2s;
-        /* Using absolute positioning effectively removes them from flow for centering, 
-           or we rely on width constraint. 
-           Let's use specific hiding for nav items vs header items. */
         display: none;
     }
 
-    /* We need to override display:none for nav-text to allow width transition if we want it perfect,
-       but 'display:none' is the robust way to center icons.
-       Let's try a different approach: Animate opacity on the CONTAINER of text?
-       
-       Actually, standard "App Shell" behavior:
-       1. Sidebar width animates (400ms).
-       2. Content fades out (200ms).
-       
-       If we want "subtle transition", usually implies the snap is too harsh.
-       Let's keep display: none BUT add a generic transition to the sidebar elements *before* they get the collapsed class?
-       No, CSS doesn't work that way reverse.
-       
-       Better approach:
-       1. Default state: opacity 1, max-width: 200px.
-       2. Collapsed state: opacity 0, max-width: 0.
-    */
-
     .sidebar .header-name,
     .sidebar .header-title,
-    .sidebar .header-description,
     .sidebar .social-links,
     .sidebar .nav-text,
     .sidebar .nav-indicator {
         transition: opacity 0.2s ease-in-out, max-width 0.4s ease-in-out, margin 0.4s ease;
         opacity: 1;
-        max-width: 300px;
+        max-width: 400px;
         white-space: nowrap;
         overflow: hidden;
     }
 
+    .sidebar .header-description {
+        transition: opacity 0.2s ease-in-out, max-height 0.4s ease-in-out, margin 0.4s ease;
+        opacity: 1;
+        max-height: 200px;
+        /* Animate height for paragraph instead of width to prevent reflow artifacts */
+        white-space: normal;
+        overflow: hidden;
+    }
+
+    /* Update collapsed state for description */
+    .sidebar.collapsed .header-description {
+        opacity: 0;
+        pointer-events: none;
+        max-height: 0;
+        margin: 0;
+    }
+
     .sidebar.collapsed .header-name,
     .sidebar.collapsed .header-title,
-    .sidebar.collapsed .header-description,
     .sidebar.collapsed .nav-text,
     .sidebar.collapsed .nav-indicator {
         opacity: 0;
@@ -210,21 +219,24 @@ body {
     }
 
     .sidebar.collapsed .social-links {
-        flex-direction: column-reverse;
-        /* Bottom up stacking as requested */
-        gap: 1.5rem;
+        flex-direction: column;
+        gap: 1rem;
         margin-top: auto;
-        /* Push to bottom if space allows */
-        padding-bottom: 2rem;
-        width: 100%;
-        justify-content: center;
+        /* Push to bottom */
+        padding: 1rem 0;
+        width: auto;
+        align-items: center;
     }
 
     .sidebar.collapsed .nav-menu {
         opacity: 1;
-        /* Keep menu visible */
-        margin-top: auto;
-        margin-bottom: auto;
+        margin: 0;
+        /* Reset margins, let container handle centering */
+    }
+
+    .sidebar.collapsed .nav-menu ul {
+        width: auto;
+        /* Override max-content to allow centering */
     }
 
     .sidebar.collapsed .nav-link {
@@ -236,6 +248,8 @@ body {
         display: block;
         width: 1.5rem;
         height: 1.5rem;
+        margin: 0;
+        /* Remove margin to allow perfect centering */
     }
 }
 
