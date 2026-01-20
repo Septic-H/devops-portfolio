@@ -45,7 +45,74 @@ window.addEventListener('DOMContentLoaded', () => {
     initializeMenuToggle();
     initializeSidebarToggle();
     initializeSectionCollapse();
+    initializeTerminalControls();
 });
+
+// Terminal Window Controls
+function initializeTerminalControls() {
+    const terminal = document.querySelector('.terminal-window');
+    const closeBtn = document.querySelector('.terminal-button.close');
+    const minimizeBtn = document.querySelector('.terminal-button.minimize');
+    const maximizeBtn = document.querySelector('.terminal-button.maximize');
+
+    if (!terminal || !closeBtn || !minimizeBtn || !maximizeBtn) return;
+
+    // Minimize
+    minimizeBtn.addEventListener('click', () => {
+        terminal.classList.toggle('collapsed');
+        if (terminal.classList.contains('fullscreen')) {
+            terminal.classList.remove('fullscreen');
+        }
+    });
+
+    // Maximize
+    maximizeBtn.addEventListener('click', () => {
+        terminal.classList.toggle('fullscreen');
+        if (terminal.classList.contains('collapsed')) {
+            terminal.classList.remove('collapsed');
+        }
+    });
+
+    // Close
+    closeBtn.addEventListener('click', () => {
+        terminal.classList.add('closed');
+
+        // Optional: Add a way to bring it back, or just let it stay closed 
+        // until refresh. For now, let's create a "Reset" toast or button could be complex.
+        // A simple double-click on section title to restore could be a hidden easter egg feature
+        // or just rely on refresh.
+
+        // Let's add a small restore button in the section if it is closed
+        createRestoreButton(terminal);
+    });
+}
+
+function createRestoreButton(terminal) {
+    const parent = terminal.parentElement;
+
+    // Check if button already exists
+    if (parent.querySelector('.restore-terminal-btn')) return;
+
+    const restoreBtn = document.createElement('button');
+    restoreBtn.textContent = 'Reopen Terminal';
+    restoreBtn.className = 'restore-terminal-btn';
+    restoreBtn.style.cssText = `
+        padding: 0.5rem 1rem;
+        background: var(--terminal-header-bg);
+        border: 1px solid var(--terminal-border);
+        color: var(--text-primary);
+        cursor: pointer;
+        font-family: var(--font-mono);
+        margin-bottom: 1rem;
+    `;
+
+    restoreBtn.addEventListener('click', () => {
+        terminal.classList.remove('closed');
+        restoreBtn.remove();
+    });
+
+    parent.insertBefore(restoreBtn, terminal);
+}
 
 // Mobile Menu Toggle
 function initializeMenuToggle() {
@@ -57,7 +124,7 @@ function initializeMenuToggle() {
 
     menuToggle.addEventListener('click', () => {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-        
+
         menuToggle.setAttribute('aria-expanded', !isExpanded);
         menuToggle.classList.toggle('active');
         navMenu.classList.toggle('mobile-active');
@@ -90,7 +157,7 @@ function initializeSidebarToggle() {
         sidebar.classList.toggle('collapsed');
         container.classList.toggle('sidebar-collapsed');
         toggleButton.classList.toggle('sidebar-collapsed');
-        
+
         // Update aria-label based on state
         const isCollapsed = sidebar.classList.contains('collapsed');
         toggleButton.setAttribute('aria-label', isCollapsed ? 'Expand sidebar' : 'Collapse sidebar');
