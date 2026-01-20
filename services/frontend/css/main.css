@@ -160,8 +160,64 @@ body {
     .sidebar.collapsed .nav-indicator {
         opacity: 0;
         pointer-events: none;
+        visibility: hidden;
+        transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+        /* Using absolute positioning effectively removes them from flow for centering, 
+           or we rely on width constraint. 
+           Let's use specific hiding for nav items vs header items. */
         display: none;
-        /* remove from flow so icons center properly if flex */
+    }
+
+    /* We need to override display:none for nav-text to allow width transition if we want it perfect,
+       but 'display:none' is the robust way to center icons.
+       Let's try a different approach: Animate opacity on the CONTAINER of text?
+       
+       Actually, standard "App Shell" behavior:
+       1. Sidebar width animates (400ms).
+       2. Content fades out (200ms).
+       
+       If we want "subtle transition", usually implies the snap is too harsh.
+       Let's keep display: none BUT add a generic transition to the sidebar elements *before* they get the collapsed class?
+       No, CSS doesn't work that way reverse.
+       
+       Better approach:
+       1. Default state: opacity 1, max-width: 200px.
+       2. Collapsed state: opacity 0, max-width: 0.
+    */
+
+    .sidebar .header-name,
+    .sidebar .header-title,
+    .sidebar .header-description,
+    .sidebar .social-links,
+    .sidebar .nav-text,
+    .sidebar .nav-indicator {
+        transition: opacity 0.2s ease-in-out, max-width 0.4s ease-in-out, margin 0.4s ease;
+        opacity: 1;
+        max-width: 300px;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+
+    .sidebar.collapsed .header-name,
+    .sidebar.collapsed .header-title,
+    .sidebar.collapsed .header-description,
+    .sidebar.collapsed .nav-text,
+    .sidebar.collapsed .nav-indicator {
+        opacity: 0;
+        pointer-events: none;
+        max-width: 0;
+        margin: 0;
+    }
+
+    .sidebar.collapsed .social-links {
+        flex-direction: column-reverse;
+        /* Bottom up stacking as requested */
+        gap: 1.5rem;
+        margin-top: auto;
+        /* Push to bottom if space allows */
+        padding-bottom: 2rem;
+        width: 100%;
+        justify-content: center;
     }
 
     .sidebar.collapsed .nav-menu {
