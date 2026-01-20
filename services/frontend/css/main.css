@@ -71,7 +71,7 @@ body {
     z-index: 100;
     width: 3rem;
     height: 3rem;
-    border-radius: 0.25rem;
+    border-radius: 0;
     background-color: var(--terminal-header-bg);
     border: 1px solid var(--terminal-border);
     color: var(--text-primary);
