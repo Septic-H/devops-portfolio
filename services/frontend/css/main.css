@@ -494,6 +494,57 @@ body {
     height: 1.5rem;
 }
 
+/* --- Collapsed Sidebar Info --- */
+.collapsed-sidebar-info {
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 30;
+    background-color: rgba(29, 32, 33, 0.95);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--terminal-border);
+    padding: 1.25rem 1.5rem;
+    margin: -4rem -1.5rem 2rem -1.5rem;
+}
+
+@media (min-width: 1024px) {
+    .sidebar-collapsed .collapsed-sidebar-info {
+        display: block;
+        animation: slideDown 300ms ease-out;
+    }
+}
+
+.collapsed-info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.collapsed-info-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: 0.05em;
+}
+
+/* .collapsed-info-name::before {
+    content: '> ';
+    color: var(--text-cyan);
+} */
+
+.collapsed-info-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-cyan);
+    letter-spacing: 0.025em;
+}
+
+.collapsed-info-description {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
 /* --- Main Content (Right Column) --- */
 .main-content {
     padding: 2rem 0;

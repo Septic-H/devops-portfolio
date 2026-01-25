@@ -139,8 +139,16 @@ function initializeSidebarToggle() {
     const toggleButton = document.querySelector('.sidebar-toggle-btn');
     const sidebar = document.querySelector('.sidebar');
     const container = document.querySelector('.container');
+    const mainContent = document.querySelector('.main-content');
 
-    if (!toggleButton || !sidebar) return;
+    if (!toggleButton || !sidebar || !mainContent) return;
+
+    // Create collapsed info header if it doesn't exist
+    let collapsedInfo = mainContent.querySelector('.collapsed-sidebar-info');
+    if (!collapsedInfo) {
+        collapsedInfo = createCollapsedSidebarInfo();
+        mainContent.insertBefore(collapsedInfo, mainContent.firstChild);
+    }
 
     toggleButton.addEventListener('click', () => {
         sidebar.classList.toggle('collapsed');
@@ -152,6 +160,19 @@ function initializeSidebarToggle() {
         toggleButton.setAttribute('aria-label', isCollapsed ? 'Expand sidebar' : 'Collapse sidebar');
         toggleButton.setAttribute('title', isCollapsed ? 'Expand sidebar' : 'Collapse sidebar');
     });
+}
+
+function createCollapsedSidebarInfo() {
+    const collapsedInfo = document.createElement('div');
+    collapsedInfo.className = 'collapsed-sidebar-info';
+    collapsedInfo.innerHTML = `
+        <div class="collapsed-info-content">
+            <div class="collapsed-info-name">Huzaifa</div>
+            <div class="collapsed-info-title">Software Engineering Student</div>
+            <div class="collapsed-info-description">I turn "it works on my machine" into "it works in production."</div>
+        </div>
+    `;
+    return collapsedInfo;
 }
 
 // Section Collapse on Mobile
