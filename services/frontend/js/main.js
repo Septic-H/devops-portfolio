@@ -1,7 +1,3 @@
-// ========================================
-// MAIN.JS
-// ========================================
-
 // Typewriter Effect for About Section
 function typewriterEffect() {
     const typedTextElement = document.getElementById('typed-text');
