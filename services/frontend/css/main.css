@@ -932,7 +932,7 @@ body {
 
 .experience-description::before {
     content: '$ ';
-    color: var(--text-primary);
+    color: var(--text-cyan);
 }
 
 /* --- Contribution Details List --- */
