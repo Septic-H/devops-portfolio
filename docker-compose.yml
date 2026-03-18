@@ -63,9 +63,40 @@ services:
     networks:
       - app-network
 
+  # Loki
+  loki:
+    image: grafana/loki:latest
+    container_name: loki
+    restart: always
+    ports:
+      - "127.0.0.1:3100:3100"
+    command: ["-config.file=/etc/loki/local-config.yaml"]
+    volumes:
+      - loki_data:/loki
+    networks:
+      - app-network
+
+  # Promtail
+  promtail:
+    image: grafana/promtail:latest
+    container_name: promtail
+    user: root
+    restart: always
+    depends_on:
+      - loki
+    command: ["-config.file=/etc/promtail/promtail-config.yaml"]
+    volumes:
+      - ./promtail-config.yaml:/etc/promtail/promtail-config.yaml:ro
+      - /var/log/nginx:/var/log/nginx:ro
+      - promtail_positions:/var/lib/promtail
+    networks:
+      - app-network
+
 volumes:
   prometheus_data:
   grafana_data:
+  loki_data:
+  promtail_positions:
 
 # Create a custom network so services can talk to each other
 networks:
