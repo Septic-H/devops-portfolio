@@ -964,6 +964,48 @@ body {
     background-color: rgba(104, 157, 106, 0.1);
 }
 
+/* --- Education --- */
+.education-card {
+    position: relative;
+    margin-top: 1.5rem;
+    padding: 1rem 1.5rem;
+    border: 1px solid var(--terminal-border);
+    transition: all 200ms;
+}
+
+.education-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--accent-amber);
+    opacity: 0;
+    transition: opacity 200ms;
+}
+
+.education-card:hover {
+    background: var(--log-hover-bg);
+    border-color: var(--text-primary);
+}
+
+.education-card:hover::before {
+    opacity: 1;
+}
+
+.education-degree {
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--text-primary);
+}
+
+.education-school {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
 /* --- Projects List (Same Log Style) --- */
 .projects-list {
     list-style: none;
@@ -1081,6 +1123,10 @@ body {
 
     .experience-card,
     .project-card {
+        padding: 1rem;
+    }
+
+    .education-card {
         padding: 1rem;
     }
 }

@@ -168,7 +168,7 @@ function createCollapsedSidebarInfo() {
     collapsedInfo.innerHTML = `
         <div class="collapsed-info-content">
             <div class="collapsed-info-name">Huzaifa</div>
-            <div class="collapsed-info-title">Software Engineering Student</div>
+            <div class="collapsed-info-title">DevOps &amp; Backend Engineer</div>
             <div class="collapsed-info-description">I turn "it works on my machine" into "it works in production."</div>
         </div>
     `;
